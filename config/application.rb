@@ -41,6 +41,7 @@ module Data
 
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
-    config.action_dispatch.cookies_same_site_protection = :none
+    config.middleware.use ActionDispatch::ContentSecurityPolicy::Middleware
+    # config.action_dispatch.cookies_same_site_protection = :none
   end
 end
